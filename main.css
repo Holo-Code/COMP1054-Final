@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* Keon Hord - 200430009 */
+/*1. The layout pattern that is used within this interface design is either the F pattern layour or a single column layout. At first I found my eye following the
+    F pattern but then further realized that the page may have multiple elements but it's all contained within a single column which is easy to follow down the page. */
+
+/* CSS Document */
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  /* Font Linked through the HTML and added here as a global font with a sans-serif backup */
+  font-family: 'open_sansregular',sans-serif;
+}
+
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bannerimage{
+  background-image: url(https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  /*Image from Pexels - https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  max-width: 100%; /* ANSWER NUMBER 4 IS RIGHT HERE! */
+}
+
+h1,
+h2,
+h3{
+  font-family: 'Raleway', sans-serif;
+}
+
+header{
+  height: 100px;
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  align-items: center;
+}
+
+header nav ul{
+  display: flex;
+  padding-left: 900px;
+}
+
+header nav ul li{
+  padding: 5px 15px 5px 15px;
+}
+
+body > div > main > h1,
+body > div > main > p{
+  text-align: center;
+}
+
+body > div > main > .pricingTable{
+  display: flex;
+  padding: 50px;
+}
+
+body > div > main > section > section:nth-child(1) > h2,
+body > div > main > section > section:nth-child(1) > h3,
+body > div > main > section > section:nth-child(2) > h2,
+body > div > main > section > section:nth-child(2) > h3,
+body > div > main > section > section:nth-child(3) > h2,
+body > div > main > section > section:nth-child(3) > h3{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+body > div > main > section > section:nth-child(1),
+body > div > main > section > section:nth-child(2),
+body > div > main > section > section:nth-child(3){
+  padding: 20px;
+}
+
+body > div > main > section > section:nth-child(1) > ul,
+body > div > main > section > section:nth-child(2) > ul,
+body > div > main > section > section:nth-child(3) > ul{
+  text-align: center;
+  padding: 20px;
+  line-height: 1.2;
+}
+
+body > div > main > section > section:nth-child(1) > button{
+  margin-left: 132px;
+}
+
+body > div > main > section > section:nth-child(2) > button{
+  margin-left: 148px;
+}
+
+body > div > main > section > section:nth-child(3) > button{
+  margin-left: 152px;
+}
+
+body div footer{
+  display: flex;
+  line-height: 1.5;
+}
+
+body div footer div{
+  padding: 50px;
+}
+
+
+/*2. So the styling rule that is being used below is targetting a class from the index.html file called "pricingTable" and then further explaining that it's targetting the
+    button element that is inside that class. The button is having a padding added around it of .5rems and 1rem which would be the top/bottom and left/right sides. After that
+    the font size within the button is going to be a size of 1.25rems and have a line height of 1.5. Finally the rule is explaining that the border radius of the button will be
+    .3rems around. */
+
+/* EXPLAIN THIS STYLE RULE (1 mark) */
+
+.pricingTable button {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+
+
+.pricingTable section:first-of-type button {
+  border: 1px solid #007bff;
+}
+
+
+/* FIX THIS STYLE RULE  (2 marks) */
+
+
+.pricingTable section:nth-of-type(2) button
+.pricingTable section:nth-of-type(3) button {
+  background-color: #007bff; /* <--- Missing a colon after background-color */
+  color: #fff;
+  border: solid; /* <-- Border doesn't accept the value of transparent */
+}
